@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class ControllerScript : MonoBehaviour
 {
     [SerializeField] InputAction movement;
+    [SerializeField] float controlSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +26,9 @@ public class ControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalThrow = movement.ReadValue<Vector2>().x;
-        Debug.Log(horizontalThrow);
-        float verticalThrow = movement.ReadValue<Vector2>().y;
-        Debug.Log(verticalThrow);
+        float newXPos = transform.localPosition.x + movement.ReadValue<Vector2>().x * Time.deltaTime * controlSpeed;
+        float newYPos = transform.localPosition.y + movement.ReadValue<Vector2>().y * Time.deltaTime * controlSpeed;
 
+        transform.localPosition = new Vector3(newXPos, newYPos, transform.localPosition.z);
     }
 }
