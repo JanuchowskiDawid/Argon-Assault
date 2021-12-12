@@ -313,7 +313,9 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Movement
       m_Flags: 8
-  controlSpeed: 5
+  controlSpeed: 2
+  xRange: 2
+  yRange: 3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

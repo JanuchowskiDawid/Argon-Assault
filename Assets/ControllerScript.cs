@@ -7,7 +7,11 @@ using UnityEngine.InputSystem;
 public class ControllerScript : MonoBehaviour
 {
     [SerializeField] InputAction movement;
-    [SerializeField] float controlSpeed;
+    [SerializeField] float controlSpeed = 10f;
+
+    [SerializeField] float xRange = 5f;
+
+    [SerializeField] float yRange = 3.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +30,23 @@ public class ControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float newXPos = transform.localPosition.x + movement.ReadValue<Vector2>().x * Time.deltaTime * controlSpeed;
-        float newYPos = transform.localPosition.y + movement.ReadValue<Vector2>().y * Time.deltaTime * controlSpeed;
+        ProcessMovement();
+    }
 
-        transform.localPosition = new Vector3(newXPos, newYPos, transform.localPosition.z);
+    private void ProcessMovement()
+    {
+        float xThrow = movement.ReadValue<Vector2>().x;
+        float yThrow = movement.ReadValue<Vector2>().y;
+
+        float xOffset = xThrow * Time.deltaTime * controlSpeed;
+        float rawXPos = transform.localPosition.x + xOffset;
+        float clampedXPos = Mathf.Clamp(rawXPos, -xRange, xRange);
+
+        float yOffset = yThrow * Time.deltaTime * controlSpeed;
+        float rawYPos = transform.localPosition.y + yOffset;
+        float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange);
+
+
+        transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
     }
 }
