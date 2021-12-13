@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,17 @@ public class ControllerScript : MonoBehaviour
     [SerializeField] InputAction movement;
     [SerializeField] float controlSpeed = 10f;
 
-    [SerializeField] float xRange = 5f;
+    [SerializeField] float xRange = 10f;
 
-    [SerializeField] float yRange = 3.2f;
+    [SerializeField] float yRange = 6f;
+
+    [SerializeField] float positionPitchFactor = -2f;
+    [SerializeField] float controlPitchFactor = -10f;
+    [SerializeField] float positionYawFactor = 2.6f;
+    [SerializeField] float controlRollFactor = -6f;
+
+    float xThrow, yThrow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +40,26 @@ public class ControllerScript : MonoBehaviour
     void Update()
     {
         ProcessMovement();
+        ProcessRotation();
+    }
+
+    private void ProcessRotation()
+    {
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToControlThrow = yThrow * controlPitchFactor;
+
+        float pitch = pitchDueToPosition + pitchDueToControlThrow;
+        float yaw = transform.localPosition.x * positionYawFactor;
+        float roll = xThrow * controlRollFactor;
+
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+
     }
 
     private void ProcessMovement()
     {
-        float xThrow = movement.ReadValue<Vector2>().x;
-        float yThrow = movement.ReadValue<Vector2>().y;
+        xThrow = movement.ReadValue<Vector2>().x;
+        yThrow = movement.ReadValue<Vector2>().y;
 
         float xOffset = xThrow * Time.deltaTime * controlSpeed;
         float rawXPos = transform.localPosition.x + xOffset;
