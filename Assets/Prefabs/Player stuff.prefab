@@ -142,6 +142,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9119492001498795283}
     m_Modifications:
+    - target: {fileID: 276655633, guid: 33942a27e06a55e498652847d7d15f99, type: 3}
+      propertyPath: firing.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/leftCtrl
+      objectReference: {fileID: 0}
     - target: {fileID: 1734771206656390, guid: 33942a27e06a55e498652847d7d15f99, type: 3}
       propertyPath: m_Name
       value: StarSparrow6
@@ -277,6 +281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4871846410209052867, guid: c73b1d5351feab044a813d867f1dae24,
         type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871846410209052867, guid: c73b1d5351feab044a813d867f1dae24,
+        type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1
       objectReference: {fileID: 0}
@@ -353,6 +362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: TrailModule.lifetime.scalar
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871846410209052867, guid: c73b1d5351feab044a813d867f1dae24,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8536030632978394299, guid: c73b1d5351feab044a813d867f1dae24,
         type: 3}

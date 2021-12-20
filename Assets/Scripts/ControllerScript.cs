@@ -8,9 +8,12 @@ using UnityEngine.InputSystem;
 public class ControllerScript : MonoBehaviour
 {
     [SerializeField] InputAction movement;
+    [SerializeField] InputAction firing;
     [SerializeField] float controlSpeed = 10f;
 
     [SerializeField] float xRange = 10f;
+
+    [SerializeField] GameObject[] lasers;
 
     [SerializeField] float yRange = 6f;
 
@@ -29,11 +32,13 @@ public class ControllerScript : MonoBehaviour
     void OnEnable()
     {
         movement.Enable();
+        firing.Enable();
     }
 
     void OnDisable()
     {
         movement.Disable();
+        firing.Disable();
     }
 
     // Update is called once per frame
@@ -41,6 +46,35 @@ public class ControllerScript : MonoBehaviour
     {
         ProcessMovement();
         ProcessRotation();
+        ProcessFiring();
+    }
+
+    private void ProcessFiring()
+    {
+        if (firing.ReadValue<float>() > 0.5f)
+        {
+            ActivateLasers();
+        }
+        else
+        {
+            DeactivateLasers();
+        }
+    }
+
+    private void DeactivateLasers()
+    {
+        foreach(GameObject laser in lasers)
+        {
+            laser.SetActive(false);
+        }
+    }
+
+    private void ActivateLasers()
+    {
+        foreach (GameObject laser in lasers)
+        {
+            laser.SetActive(true);
+        }
     }
 
     private void ProcessRotation()
