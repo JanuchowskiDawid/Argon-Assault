@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float levelLoadDelay = 2f;
-
+    [SerializeField] ParticleSystem particles;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -24,6 +24,9 @@ public class CollisionHandler : MonoBehaviour
     {
         GetComponent<ControllerScript>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay);
+        particles.Play();
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     void ReloadLevel()
