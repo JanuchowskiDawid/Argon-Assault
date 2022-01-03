@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         explosion.Play();
-        score.IcreaseScore(15);
+        score.IcreaseScore(scorePerHit);
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<SphereCollider>().enabled = false;
         Destroy(gameObject, 2f);
