@@ -535,6 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1364637058}
   scorePerHit: 15
+  hitPoints: 20
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 882178172}
   scorePerHit: 15
+  hitPoints: 3
 --- !u!1001 &1364637057
 PrefabInstance:
   m_ObjectHideFlags: 0
