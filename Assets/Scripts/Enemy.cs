@@ -11,7 +11,8 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         score = FindObjectOfType<Score>();
-
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = false;
     }
     private void OnParticleCollision(GameObject other)
     {
@@ -22,7 +23,10 @@ public class Enemy : MonoBehaviour
             explosion.Play();
             score.IcreaseScore(scorePerHit);
             GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<SphereCollider>().enabled = false;
+            if (gameObject.GetComponent<SphereCollider>() != null)
+            {
+                GetComponent<SphereCollider>().enabled = false;
+            }
             Destroy(gameObject, 2f);
         }
     }

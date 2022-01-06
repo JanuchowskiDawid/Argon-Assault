@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7961299294435858249}
+  - component: {fileID: 5665163785979648050}
+  - component: {fileID: 5665163785979648049}
   m_Layer: 0
-  m_Name: StarSparrow15
+  m_Name: XWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7961299294435858250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 405.90543, y: 25.444633, z: 198.54205}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 7958893100884889162}
   - {fileID: 7958696032825336386}
@@ -42,6 +44,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5665163785979648050
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961299294435858250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.0981903, y: 5.9235497, z: 10.777084}
+  m_Center: {x: 0.012123108, y: -0.043272972, z: -0.059654236}
+--- !u!114 &5665163785979648049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961299294435858250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ab5dc8b2db27344b14cc062086b29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 7102674275380359011, guid: 5b1a51f4c4852a44985e0f3e936fd04e,
+    type: 3}
+  scorePerHit: 27
+  hitPoints: 7
 --- !u!1001 &10430322430973613
 PrefabInstance:
   m_ObjectHideFlags: 0
