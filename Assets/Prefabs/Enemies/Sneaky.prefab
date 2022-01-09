@@ -71,6 +71,7 @@ MonoBehaviour:
     type: 3}
   scorePerHit: 30
   hitPoints: 3
+  deathsfx: {fileID: 8300000, guid: 90cb3b4aa6b14684f944bd0006b1e597, type: 3}
 --- !u!95 &194245225
 Animator:
   serializedVersion: 3

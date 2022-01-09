@@ -60,6 +60,7 @@ MonoBehaviour:
     type: 3}
   scorePerHit: 15
   hitPoints: 5
+  deathsfx: {fileID: 8300000, guid: 90cb3b4aa6b14684f944bd0006b1e597, type: 3}
 --- !u!65 &-9041593427821911565
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -69,10 +69,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ab5dc8b2db27344b14cc062086b29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 7102674275380359011, guid: 5b1a51f4c4852a44985e0f3e936fd04e,
+  explosion: {fileID: 3240708245421221845, guid: 5b1a51f4c4852a44985e0f3e936fd04e,
     type: 3}
   scorePerHit: 27
   hitPoints: 7
+  deathsfx: {fileID: 8300000, guid: 90cb3b4aa6b14684f944bd0006b1e597, type: 3}
 --- !u!1001 &10430322430973613
 PrefabInstance:
   m_ObjectHideFlags: 0
