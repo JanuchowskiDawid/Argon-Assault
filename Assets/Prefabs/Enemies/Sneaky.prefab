@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3612876373091577722}
   - component: {fileID: 2623376222805061849}
   - component: {fileID: 2623376222805061848}
+  - component: {fileID: 194245225}
   m_Layer: 0
   m_Name: Sneaky
   m_TagString: Untagged
@@ -66,10 +67,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ab5dc8b2db27344b14cc062086b29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 7102674275380359011, guid: 5b1a51f4c4852a44985e0f3e936fd04e,
+  explosion: {fileID: 3240708245421221845, guid: 5b1a51f4c4852a44985e0f3e936fd04e,
     type: 3}
   scorePerHit: 30
   hitPoints: 3
+--- !u!95 &194245225
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3612876373091577721}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &121056703032180724
 PrefabInstance:
   m_ObjectHideFlags: 0

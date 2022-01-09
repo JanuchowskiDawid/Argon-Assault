@@ -30,7 +30,10 @@ public class Enemy : MonoBehaviour
             vfx = Instantiate(explosion, transform.position, Quaternion.identity);
             vfx.transform.parent = parentGameObject.transform;
             score.IcreaseScore(scorePerHit);
-            GetComponent<MeshRenderer>().enabled = false;
+            if (gameObject.GetComponent<MeshRenderer>() !=null)
+            {
+                GetComponent<MeshRenderer>().enabled = false;
+            }
             if (gameObject.GetComponent<SphereCollider>() != null)
             {
                 GetComponent<SphereCollider>().enabled = false;
